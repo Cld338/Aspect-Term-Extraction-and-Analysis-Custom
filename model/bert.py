@@ -17,8 +17,6 @@ class bert_ATE(torch.nn.Module):
         if tags_tensors is not None:
             tags_tensors = tags_tensors.view(-1)
             linear_outputs = linear_outputs.view(-1,3)
-            # print(linear_outputs.size())
-            # print(tags_tensors.size())
             loss = self.loss_fn(linear_outputs, tags_tensors)
             return loss
         else:
